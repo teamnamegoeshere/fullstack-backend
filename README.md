@@ -12,4 +12,4 @@ This repository contains the source code for the Rails backend of Popcorn Bucket
   - Run database migrations with ```rails db:migrate```
   - Add dummy database records for testing with ```rails db:seed```
   - Run the development server locally: ```rails s -p 4000``` We recommend port 4000 when testing in conjunction with the frontend repository
-  - Open a web browser and navigate to ```localhost:4000```
+- Open a web browser and navigate to ```localhost:4000```
