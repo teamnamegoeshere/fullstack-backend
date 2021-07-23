@@ -5,6 +5,8 @@
 This repository contains the source code for the Rails backend of Popcorn Bucket List. The Frontend repository can be found at https://github.com/teamnamegoeshere/fullstack-frontend
 
 ### Getting Started
+- Ensure you have [Ruby](https://www.ruby-lang.org/en/documentation/installation/) installed
+- Ensure you have [Rails](https://rails.github.io/download/) installed
 - Clone this repository with [Git](https://git-scm.com/downloads), or [download from GitHub](https://github.com/teamnamegoeshere/fullstack-backend/archive/refs/heads/main.zip) and unzip
 - Open the directory in terminal:
   - Run ```bundle install``` in terminal to install dependencies
