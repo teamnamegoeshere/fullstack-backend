@@ -6,8 +6,8 @@ Content-type: application/json
     "first_name": "John",
     "last_name": "Johnson",
     "date_of_birth": "2000-01-01",
-    "username": "John01",
-    "email": "john@john.com",
+    "username": "John02",
+    "email": "john2@john.com",
     "password": "Password1",
     "password_confirmation": "Password1"
 }
