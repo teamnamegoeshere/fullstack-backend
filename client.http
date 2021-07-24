@@ -11,3 +11,12 @@ Content-type: application/json
     "password": "Password1",
     "password_confirmation": "Password1"
 }
+
+### Successfully Log In
+POST http://localhost:4000/auth/log_in
+content-type: application/json
+
+{
+    "email": "john2@john.com",
+    "password": "Password1"
+}
