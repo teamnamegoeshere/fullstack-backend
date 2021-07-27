@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     end
 
     def log_in
-        @user = User.find_by_email(params[:email])
+        @user = User.find_by_username(params[:username])
 
         if @user && @user.authenticate(params[:password])
             auth_token = Knock::AuthToken.new payload: {sub: @user.id}
