@@ -110,25 +110,18 @@ RSpec.describe User, type: :model do
       subject.password_confirmation = "he1Lo"
       expect(subject).to_not be_valid
     end
-    it "must contain a number" do
-      expect(subject).to_be valid
+    it "must contain at least one number" do
+      expect(subject).to be_valid
 
       subject.password = "helLoworld"
       subject.password_confirmation = "helLoworld"
       expect(subject).to_not be_valid
     end
-    it "must contain at least one uppercase character" do
-      expect(subject).to_be valid
-      
-      subject.password = "he1loworld"
-      subject.password_confirmation = "he1loworld"
-      expect(subject).to_not be_valid
-    end
-    it "must contain at least one lowercase character" do
-      expect(subject).to_be valid
+    it "must contain at least one letter" do
+      expect(subject).to be_valid
 
-      subject.password = "HE1LOWORLD"
-      subject.password_confirmation = "HE1LOWORLD"
+      subject.password = "456789@1"
+      subject.password_confirmation = "456789@1"
       expect(subject).to_not be_valid
     end
   end
