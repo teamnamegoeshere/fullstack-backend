@@ -1,10 +1,15 @@
 class User < ApplicationRecord
     has_secure_password
-    validates :username, presence: true, uniqueness: true
-    validates :email, presence: true, uniqueness: true
-    # email validation currently causing errors, commenting out for now.
-    # validates_length_of :email, with: URI::MailTo::EMAIL_REGEXP
-    validates :first_name, presence: true
-    validates :last_name, presence: true
-    validates :date_of_birth, presence: true
+    # lowercase username, unique, required letters and numbers only
+    validates :username, presence: true, uniqueness: true, length: { minimum: 3 } , format: { with: /\A[a-z0-9]+\z/ }
+    # email needs to adhere to basic email format, be unique and is required
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
+    validates :email, presence: true,uniqueness: true, format: { with: VALID_EMAIL_REGEX }
+    # first name minimum 2 characters, required
+    validates :first_name, presence: true, length: { minimum: 2 } 
+    # last name minimum 2 characters, required
+    validates :last_name, presence: true, length: { minimum: 2 } 
+    # date of birth, required
+    validates :date_of_birth, presence: { message: "must be a valid date" }
+
 end
