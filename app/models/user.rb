@@ -11,6 +11,7 @@ class User < ApplicationRecord
     validates :first_name, presence: true, length: { minimum: 2 } 
     # last name minimum 2 characters, required
     validates :last_name, presence: true, length: { minimum: 2 } 
-    # date of birth, required
+    # date of birth, required, between 1900 and today
     validates :date_of_birth, presence: { message: "must be a valid date" }
+    validates_date :date_of_birth, between: [ '1900-01-01', lambda { Date.current }]
 end
