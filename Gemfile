@@ -45,3 +45,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Knock gem for auth using JWTs
 gem "knock", "~> 2.1"
+
+# validates_timeliness gem for date validation
+gem "validates_timeliness", "~> 5.0"
+
+# profanity detection with swearjar
+gem "swearjar", "~> 1.4"
