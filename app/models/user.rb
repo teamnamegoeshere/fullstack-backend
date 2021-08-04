@@ -25,4 +25,11 @@ class User < ApplicationRecord
             errors.add(:username, 'cannot contain obscenities')
         end
     end
+    # relationships
+    has_many :lists
+    # issues with dependant: :destroy to address later
+    # , dependent: :destroy
+    has_many :watched_movies
+    # issues with dependant: :destroy to address later
+    # , dependant: :destroy
 end
