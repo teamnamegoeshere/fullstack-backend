@@ -18,35 +18,45 @@ RSpec.describe List, type: :model do
     title: "Test List",
     description: "This is a test list with a maximum length of 500 characters.
     It can contain both Upper and Lower cases leters, numbers & special characters.",
-    public: false
+    # public: false
     )
   }
 
+  describe "user_id" do
+    
+    it "is required" do
+      subject.user_id = nil
+      expect(subject).to_not be_valid
+    end
+
+    it "is valid" do
+      subject.user_id = 9999
+      expect(subject).to_not be_valid
+    end
+
+  end
   describe "title" do
 
     it "is required" do
+      expect(subject).to be_valid
       subject.title = nil
       expect(subject).to_not be_valid
     end
-
-    it "cannot contain special characters" do
-      subject.title="h3@"
-      expect(subject).to_not be_valid
-    end
-    
-    it "is longer than 3 characters" do
-      subject.title="te"
+        
+    it "is at least 3 characters" do
+      expect(subject).to be_valid
+      subject.title = "te"
       expect(subject).to_not be_valid
     end
 
     it "is shorter than 50 characters" do
-      subject.title="7DqWceX6DsAk7ybovDcRHLCbFz4SkioW15ZygX9NJeiTrC7Gt04Py1HKR1dE"
+      subject.title = "7DqWceX6DsAk7ybovDcRHLCbFz4SkioW15ZygX9NJeiTrC7Gt04Py1HKR1dE"
       expect(subject).to_not be_valid
     end
 
     it "cannot contain profanity" do
-      subject.title="Shit Tier Movies"
-      expect(title).to_not be_valid
+      subject.title = "Shit Tier Movies"
+      expect(subject).to_not be_valid
     end
 
   end
@@ -58,9 +68,9 @@ RSpec.describe List, type: :model do
       expect(subject).to_not be_valid
     end
 
-    it "is longer than 10 characters" do
+    it "is at least 10 characters" do
       subject.description = "te"
-      expect(subject.to_not be_valid)
+      expect(subject).to_not be_valid
     end
 
     it "is shorter than 500 characters" do
@@ -83,17 +93,14 @@ RSpec.describe List, type: :model do
 
   describe "public" do
   
-    it "is required" do
-      subject.public = nil
-      expect(subject).to_not be_valid
-    end
-
     it "defaults to false" do
-      subject.public = ""
-      expect(subject).to equal(false)
+     expect(subject.public).to equal(false)
+     subject.public = true
+     expect(subject.public).to equal(true)
+     subject.public = false
+     expect(subject.public).to equal(false)
     end
 
   end
-    # public defaults to false
-  # public is required
+
 end
