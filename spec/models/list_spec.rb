@@ -20,7 +20,7 @@ RSpec.describe List, type: :model do
     )
   }
 
-  describe "title" do
+  pending "title" do
 
     it "cannot be empty" do
       subject.title = nil
