@@ -1,19 +1,54 @@
 class ListsController < ApplicationController
-    def create
-        @list = List.create(list_params)
-        if @list.save
-            # would prefer to return just the title rather than the entire object
-            render json: @list, status: :created
-        else
-            render json: @list.errors, status: :unprocessable_entity
-        end
-    end
-    # edit
-    # destroy
-    # search
-    # search only Lists where public = true
+  before_action :set_list, only: [:show, :update, :destroy]
 
-    private
+  # GET /lists
+  def index
+    @lists = List.all
+
+    render json: @lists
+  end
+
+  # GET /lists/1
+  def show
+    render json: @list
+  end
+
+  # POST /lists
+  def create
+    @list = List.new(list_params)
+
+    if @list.save
+      render json: @list, status: :created, location: @list
+    else
+      render json: @list.errors, status: :unprocessable_entity
+    end
+  end
+
+  # PATCH/PUT /lists/1
+  def update
+    if @list.update(list_params)
+      render json: @list
+    else
+      render json: @list.errors, status: :unprocessable_entity
+    end
+  end
+
+  # DELETE /lists/1
+  def destroy
+    @list.destroy
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_list
+      @list = List.find(params[:id])
+    end
+
+    # Only allow a list of trusted parameters through.
+    # def list_params
+    #   params.fetch(:list, {})
+    # end
+
     def list_params
         params.permit(:user_id, :title, :description, :public)
     end

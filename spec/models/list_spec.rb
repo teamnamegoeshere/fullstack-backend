@@ -22,7 +22,7 @@ RSpec.describe List, type: :model do
     )
   }
 
-  describe "user_id" do
+  pending "user_id" do
     
     it "is required" do
       subject.user_id = nil

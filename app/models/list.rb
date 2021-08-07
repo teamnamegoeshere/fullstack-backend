@@ -27,7 +27,8 @@ class List < ApplicationRecord
     end
     
     # relationships
-    belongs_to :user
+    # comment out belong_to until Auth completed
+    # belongs_to :user
     has_many :movie_lists
     # issues with dependant: :destroy to address later
     # , dependant: :destroy
