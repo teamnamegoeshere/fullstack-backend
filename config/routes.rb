@@ -5,4 +5,6 @@ Rails.application.routes.draw do
     post 'sign_up', to: 'users#create'
     post 'log_in', to: 'users#log_in'
   end
+  get 'movies', to: 'movies#index'
+  get 'movies/search', to: 'movies#search'
 end
