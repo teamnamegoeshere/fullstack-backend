@@ -18,6 +18,7 @@ class User < ApplicationRecord
     validates :date_of_birth, presence: { message: "must be a valid date" }
     validates_date :date_of_birth, between: [ '1900-01-01', lambda { Date.current }]
 
+    # swearword helper method
     def text_must_be_decent
         require "swearjar"
         sj = Swearjar.default
