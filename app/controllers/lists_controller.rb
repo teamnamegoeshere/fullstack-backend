@@ -1,9 +1,10 @@
 class ListsController < ApplicationController
+  before_action :authenticate_user
   before_action :set_list, only: [:show, :update, :destroy]
 
   # GET /lists
-  def index
-    @lists = List.all
+  def index    
+    @lists = current_user.lists.all
 
     render json: @lists
   end
@@ -15,7 +16,7 @@ class ListsController < ApplicationController
 
   # POST /lists
   def create
-    @list = List.new(list_params)
+    @list = current_user.lists.new(list_params)
 
     if @list.save
       render json: @list, status: :created, location: @list
@@ -41,7 +42,8 @@ class ListsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list
-      @list = List.find(params[:id])
+      # @list = List.find(params[:id])
+      @list = current_user.lists.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
