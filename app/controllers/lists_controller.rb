@@ -26,6 +26,7 @@ class ListsController < ApplicationController
 
   # PATCH/PUT /lists/1
   def update
+    # does this need to be edited so that only the list creator can update?
     if @list.update(list_params)
       render json: @list
     else
