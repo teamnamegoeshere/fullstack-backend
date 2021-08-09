@@ -40,6 +40,15 @@ class ListsController < ApplicationController
     @list.destroy
   end
 
+  # search
+  def search
+    # return all lists
+    # @lists = lists.all
+    # @lists.find(params[:title])
+    # filter list titles by query where shared = true
+    # @lists = List.filter_by_shared(params[:shared])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list

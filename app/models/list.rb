@@ -1,4 +1,5 @@
 class List < ApplicationRecord
+    scope :shared, -> { where shared: true}
     # title is present and between 3 and 50 characters
     validates :title, presence: true, length: { in: 3..50 }
     # validate title for swearwords. Not particularly effective
