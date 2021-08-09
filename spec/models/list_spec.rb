@@ -18,7 +18,7 @@ RSpec.describe List, type: :model do
     title: "Test List",
     description: "This is a test list with a maximum length of 500 characters.
     It can contain both Upper and Lower cases leters, numbers & special characters.",
-    # public: false
+    shared: false
     )
   }
 
@@ -91,14 +91,14 @@ RSpec.describe List, type: :model do
 
   end
 
-  describe "public" do
+  describe "shared" do
   
     it "defaults to false" do
-     expect(subject.public).to equal(false)
-     subject.public = true
-     expect(subject.public).to equal(true)
-     subject.public = false
-     expect(subject.public).to equal(false)
+     expect(subject.shared).to equal(false)
+     subject.shared = true
+     expect(subject.shared).to equal(true)
+     subject.shared = false
+     expect(subject.shared).to equal(false)
     end
 
   end
