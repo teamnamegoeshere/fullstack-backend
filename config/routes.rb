@@ -5,4 +5,7 @@ Rails.application.routes.draw do
     post 'sign_up', to: 'users#create'
     post 'log_in', to: 'users#log_in'
   end
+  scope '/search' do
+    get '/list_search', to: 'lists#search'
+  end
 end

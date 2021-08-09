@@ -42,11 +42,8 @@ class ListsController < ApplicationController
 
   # search
   def search
-    # return all lists
-    # @lists = lists.all
-    # @lists.find(params[:title])
-    # filter list titles by query where shared = true
-    # @lists = List.filter_by_shared(params[:shared])
+    @shared_lists = List.shared
+    render json: @shared_lists
   end
 
   private
@@ -57,10 +54,6 @@ class ListsController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    # def list_params
-    #   params.fetch(:list, {})
-    # end
-
     def list_params
         params.require(:list).permit(:user_id, :title, :description, :shared, :id)
     end

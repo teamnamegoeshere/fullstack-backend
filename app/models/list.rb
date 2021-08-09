@@ -1,4 +1,5 @@
 class List < ApplicationRecord
+    # set custom scope to only return Lists where shared is true
     scope :shared, -> { where shared: true}
     # title is present and between 3 and 50 characters
     validates :title, presence: true, length: { in: 3..50 }
