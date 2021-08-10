@@ -49,3 +49,5 @@ Content-type: application/json
 
 # successfully delete list with id 1
 DELETE http://localhost:4000/lists/1
+
+# search shared lists
