@@ -51,3 +51,6 @@ gem "validates_timeliness", "~> 5.0"
 
 # profanity detection with swearjar
 gem "swearjar", "~> 1.4"
+
+# http requests with httparty
+gem "httparty"
