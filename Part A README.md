@@ -276,3 +276,18 @@ Day 10:
 Once User Stories were finalised by the team, they were added to Trello with corresponding labels and due dates:
 
 ![trello-day-10-after-user-stories](docs/trello/trello-day-10-after-user-stories.png)
+
+### Testing
+
+Frontend testing and integration testing was performed manually using a matrix in a shared spreadsheet. [The testing matrix can be found here](https://docs.google.com/spreadsheets/d/1WvDDIG7QetMUdJyWVnX66F5sZwrajkAC6IAAvLMRHCc/edit?usp=sharing).
+
+#### Development
+
+Before every Pull request was opened, tests were performed according to the matrix, utilising Postman and the humao.rest-client VSCode extension before user permissions were implemented. The ```client.http``` file in the backend repository also serves to document the API routes of this application.
+
+A number of unit tests were written in RSpec, particularly focusing on user and list validation. These tests can be run with the ```rspec``` terminal command in the cloned backend repository. ```rspec  -f d``` provides more information on the tests being run. The backend repository also contains a filed named ```api-rspec.yml``` stored in ```.github/workflows```. This file provides configuration data for GitHub Actions. GitHub Actions then spins up a test environment and runs the RSpec tests. All tests must pass before the changes can be pushed to the remote branch and before a Pull Request can be approved.
+
+#### Production
+
+After each successful deployment, the testing matrix was utilised again in Production to ensure that core functionality worked as expected. Potential users were also asked to perform a variety of tasks from navigating to the site to logging out. Overall feedback from users involved in testing is that the styling and appearance of the site could be improved. The requirements for form validation were not too onerous however the error messages need to be more descriptive. The site was relatively easy to use and mostly sensibly laid out.
+
