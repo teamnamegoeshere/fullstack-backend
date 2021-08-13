@@ -41,8 +41,7 @@ Hosting
 
 Testing
 * RSpec
-* Jest
-* Cypress
+* Manual Testing
 
 
 ### Dataflow Diagram
@@ -51,7 +50,13 @@ Testing
 ### Application Architecture Diagram
 ![Application Architecture Diagram](docs/application-architecture-diagram/application-architecture-diagram.jpg)
 
+### Entity Relationship Diagram
+
+![ERD](docs/erd/ERD.png)
+
 ### User Stories
+
+Additional user stories were generated as needed and added to the Trello board.
 
 #### Epic: Sign Up and Sign In
 - As a **User** I want to **Sign up for an account** so that **my lists and watched titles are saved**
@@ -276,6 +281,17 @@ Day 10:
 Once User Stories were finalised by the team, they were added to Trello with corresponding labels and due dates:
 
 ![trello-day-10-after-user-stories](docs/trello/trello-day-10-after-user-stories.png)
+
+Day 17:
+![trello-day-17](docs/trello/trello-day-17.png)
+
+Day 26:
+
+![trello-day-26](docs/trello/trello-day-26.png)
+
+Day 28:
+
+![trello-day-28](docs/trello/trello-day-28.png)
 
 ### Development Setup
 
