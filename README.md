@@ -308,7 +308,7 @@ Backend Repository:
   - Run the development server locally: ```rails s -p 4000``` We recommend port 4000 when testing in conjunction with the frontend repository
 - Open a web browser and navigate to ```localhost:4000```
 
-Deploy: procfile for heroku to run db:migrate on deployment
+If you choose to deploy the backend for your own use, the repository contains a Procfile which is read by Heroku and automatically performs database migrations on deployment.
 
 Frontend Repository:
 
