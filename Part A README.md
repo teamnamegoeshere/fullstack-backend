@@ -285,7 +285,7 @@ Frontend testing and integration testing was performed manually using a matrix i
 
 Before every Pull request was opened, tests were performed according to the matrix, utilising Postman and the humao.rest-client VSCode extension before user permissions were implemented. The ```client.http``` file in the backend repository also serves to document the API routes of this application.
 
-A number of unit tests were written in RSpec, particularly focusing on user and list validation. These tests can be run with the ```rspec``` terminal command in the cloned backend repository. ```rspec  -f d``` provides more information on the tests being run. The backend repository also contains a filed named ```api-rspec.yml``` stored in ```.github/workflows```. This file provides configuration data for GitHub Actions. GitHub Actions then spins up a test environment and runs the RSpec tests. All tests must pass before the changes can be pushed to the remote branch and before a Pull Request can be approved.
+A number of unit tests were written in RSpec, particularly focusing on user and list validation. These tests can be run with the ```rspec``` terminal command in the cloned backend repository. ```rspec  -f d``` provides more information on the tests being run. The backend repository also contains a filed named ```api-rspec.yml``` stored in ```.github/workflows```. This file provides configuration data for GitHub Actions. GitHub Actions then spins up a test environment and runs the RSpec tests. All tests are run when changes are pushed to a remote branch and when a Pull Request is opened.
 
 #### Production
 
