@@ -277,6 +277,32 @@ Once User Stories were finalised by the team, they were added to Trello with cor
 
 ![trello-day-10-after-user-stories](docs/trello/trello-day-10-after-user-stories.png)
 
+### Development Setup
+
+Backend Repository:
+
+- Ensure you have [Ruby](https://www.ruby-lang.org/en/documentation/installation/) installed
+- Ensure you have [Rails](https://rails.github.io/download/) installed
+- Clone this repository with [Git](https://git-scm.com/downloads), or [download from GitHub](https://github.com/teamnamegoeshere/fullstack-backend/archive/refs/heads/main.zip) and unzip
+- Open the directory in terminal:
+  - Run ```bundle install``` to install dependencies
+  - Create a development database with ```rails db:create```
+  - Run database migrations with ```rails db:migrate```
+  - Add dummy database records for testing with ```rails db:seed```
+  - Run the development server locally: ```rails s -p 4000``` We recommend port 4000 when testing in conjunction with the frontend repository
+- Open a web browser and navigate to ```localhost:4000```
+
+Deploy: procfile for heroku to run db:migrate on deployment
+
+Frontend Repository:
+
+- Ensure you have [Yarn](https://yarnpkg.com/) installed
+- Clone this repository with Git, or [download from GitHub](https://github.com/teamnamegoeshere/fullstack-frontend/archive/refs/heads/main.zip) and unzip
+- Open the directory in terminal:
+  - run ```yarn install``` to install dependencies
+  - Run the frontend locally: ```yarn start:local```
+- Open a web browser and navigate to localhost:3000
+
 ### Testing
 
 Frontend testing and integration testing was performed manually using a matrix in a shared spreadsheet. [The testing matrix can be found here](https://docs.google.com/spreadsheets/d/1WvDDIG7QetMUdJyWVnX66F5sZwrajkAC6IAAvLMRHCc/edit?usp=sharing).
